@@ -1,5 +1,5 @@
 {
-  "name": "report-log",
+  "name": "@pony-cool/report-log",
   "version": "1.0.0",
   "description": "A TypeScript module for reporting log events.",
   "type": "module",
@@ -11,6 +11,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ponycool/report-log.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "keywords": [
     "log"
