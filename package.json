@@ -13,8 +13,7 @@
     "url": "git+https://github.com/ponycool/report-log.git"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "@pony-cool:registry": "https://git.ponycool.com/api/v4/projects/456/packages/npm/"
   },
   "keywords": [
     "log"
