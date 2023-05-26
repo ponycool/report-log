@@ -6,7 +6,7 @@ publish:
   image: node:latest
   script:
     - echo "@pony-cool:registry=${CI_SERVER_HOST}/api/v4/packages/npm/">.npmrc
-    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${PUBLISH_TOKEN}" >>.npmrc
+    - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >>.npmrc
     - cat .npmrc
     # 设置npm官方仓库地址和令牌
     - npm config set registry https://registry.npmjs.org/
