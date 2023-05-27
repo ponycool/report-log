@@ -12,9 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/ponycool/report-log.git"
   },
-  "publishConfig": {
-    "@pony-cool:registry": "https://git.ponycool.com/api/v4/projects/80/packages/npm/"
-  },
   "keywords": [
     "log"
   ],
