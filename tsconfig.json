@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "module": "ES6",
     "lib": [
       "dom",
-      "es2015",
+      "es2015"
     ]
   }
 }

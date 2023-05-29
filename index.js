@@ -14,11 +14,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.reportLog = exports.setReportLogUrl = void 0;
 var axios_1 = require("axios");
 // 定义一个变量，表示上报日志的 URL 地址
-var url = '/api/v1/open/log/report';
+var reportUrl = '/api/v1/open/log/report';
 // 定义一个函数，用来设置上报日志的 URL 地址
-function setReportLogUrl(newUrl) {
+function setReportLogUrl(url) {
     // 把 logUrl 的值更新为 newLogUrl
-    url = newUrl;
+    reportUrl = url;
 }
 exports.setReportLogUrl = setReportLogUrl;
 // 定义一个函数，用来上报日志
@@ -29,7 +29,7 @@ function reportLog(params) {
     // 构造一个对象，包含 title、url 和 logParams
     var data = __assign({ title: title, url: url }, params);
     // 使用 axios 发送一个 POST 请求到 logUrl，并传入 data
-    axios_1.default.post(url, data).then(function () {
+    axios_1.default.post(reportUrl, data).then(function () {
         // 请求成功，打印一条信息
         console.log('Log reported successfully.');
     }).catch(function (error) {
