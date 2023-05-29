@@ -1,9 +1,25 @@
 stages:
+  - build
   - publish
+
+build:
+  stage: publish
+  image: node:latest
+  before_script:
+    - apk update
+    - apk add make
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - npm install
+    - make
 
 publish:
   stage: publish
   image: node:latest
+  needs:
+    - build
   cache:
     paths:
       - node_modules/
@@ -19,6 +35,6 @@ publish:
     - npm config set registry https://registry.npmjs.org/
     - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
     # 发布到npm官方仓库上
-    - npm publish --access public
+    - npm publish --access public --registry https://registry.npmjs.org/
   only:
     - tags
