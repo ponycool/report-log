@@ -15,4 +15,13 @@ reportLog({event: 'click', params: {button: 'submit'}});
 
 ```shell
 npm run build
+
+# OR
+
+make build
+
+# OR
+
+make
+
 ```
