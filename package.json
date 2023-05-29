@@ -1,0 +1,30 @@
+{
+  "name": "@pony-cool/report-log",
+  "version": "1.0.0",
+  "description": "A TypeScript module for reporting log events.",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ponycool/report-log.git"
+  },
+  "keywords": [
+    "log"
+  ],
+  "author": "pony",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ponycool/report-log/issues"
+  },
+  "homepage": "https://github.com/ponycool/report-log#readme",
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.3"
+  }
+}
