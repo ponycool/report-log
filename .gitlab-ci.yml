@@ -7,7 +7,7 @@ build:
   image: node:latest
   before_script:
     - apt update
-    - apk install make
+    - apt install make
   cache:
     paths:
       - node_modules/
