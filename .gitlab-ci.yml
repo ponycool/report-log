@@ -30,6 +30,7 @@ publish:
   script:
     - echo "@pony-cool:registry=${CI_SERVER_HOST}/api/v4/packages/npm/" > .npmrc
     - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - echo “@pony-cool:registry=https://registry.npmjs.org/” >> .npmrc
     # 发布到GitLab仓库上
     - npm publish --registry ${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
     # 设置npm官方仓库地址和令牌
@@ -37,5 +38,5 @@ publish:
     - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
     # 发布到npm官方仓库上
     - npm publish --access public --registry https://registry.npmjs.org/
-  only:
-    - tags
+#  only:
+#    - tags
