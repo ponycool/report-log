@@ -6,8 +6,8 @@ build:
   stage: publish
   image: node:latest
   before_script:
-    - apk update
-    - apk add make
+    - apt update
+    - apk install make
   cache:
     paths:
       - node_modules/
