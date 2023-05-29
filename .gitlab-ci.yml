@@ -1,5 +1,6 @@
 stages:
   - publish
+  - npm-publish
 
 publish:
   stage: publish
@@ -13,6 +14,14 @@ publish:
   script:
     - echo "@pony-cool:registry=${CI_SERVER_HOST}/api/v4/packages/npm/" > .npmrc
     - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
+    - npm publish
+  only:
+    - tags
+
+npm-publish:
+  stage: npm-publish
+  image: node:latest
+  script:
     # 设置npm官方仓库地址和令牌
     - npm config set registry https://registry.npmjs.org/
     - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
