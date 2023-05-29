@@ -36,6 +36,6 @@ publish:
     - npm config set registry https://registry.npmjs.org/
     - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
     # 发布到npm官方仓库上
-    - npm publish --access public --registry https://registry.npmjs.org/
+    - npm publish --access public
   only:
     - tags
