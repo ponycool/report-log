@@ -25,7 +25,7 @@ publish:
     paths:
       - node_modules/
   script:
-#    - echo "@pony-cool:registry=${CI_SERVER_HOST}/api/v4/packages/npm/" > .npmrc
+    - echo "@pony-cool:registry=${CI_SERVER_HOST}/api/v4/packages/npm/" > .npmrc
     - echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}" > .npmrc
     # 发布到GitLab仓库上
     - npm publish --registry ${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
