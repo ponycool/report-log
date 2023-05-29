@@ -21,6 +21,9 @@ publish:
 npm-publish:
   stage: npm-publish
   image: node:latest
+  cache:
+    paths:
+      - node_modules/
   script:
     # 设置npm官方仓库地址和令牌
     - npm config set registry https://registry.npmjs.org/
