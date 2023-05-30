@@ -7,6 +7,9 @@ publish:
   cache:
     paths:
       - node_modules/
+  artifacts:
+    paths:
+      - dist
   before_script:
     - npm install
     - npm install -g typescript
