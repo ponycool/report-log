@@ -12,13 +12,13 @@ interface params {
 let reportUrl = '/api/v1/open/log/report';
 
 // 定义一个函数，用来设置上报日志的 URL 地址
-function setReportLogUrl(url: string): void {
+const setReportLogUrl = (url: string): void => {
     // 把 logUrl 的值更新为 newLogUrl
     reportUrl = url;
 }
 
 // 定义一个函数，用来上报日志
-function reportLog(params: params): void {
+const reportLog = async (params: params): Promise<void> => {
     // 获取当前页面的 title 和 url
     const title = document.title;
     const url = window.location.href;
@@ -30,15 +30,14 @@ function reportLog(params: params): void {
         ...params,
     };
 
-    // 使用 axios 发送一个 POST 请求到 logUrl，并传入 data
-    axios.post(reportUrl, data).then(() => {
+    try {
+        await axios.post(reportUrl, data);
         // 请求成功，打印一条信息
         console.log('Log reported successfully.');
-    }).catch((error) => {
+    } catch (error) {
         // 请求失败，打印错误信息
         console.error('Log report failed:', error);
-    });
+    }
 }
-
 
 export {setReportLogUrl, reportLog}
