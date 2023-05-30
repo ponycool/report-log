@@ -10,9 +10,12 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.reportLog = exports.setReportLogUrl = void 0;
-var axios_1 = require("axios");
+var axios_1 = __importDefault(require("axios"));
 // 定义一个变量，表示上报日志的 URL 地址
 var reportUrl = '/api/v1/open/log/report';
 // 定义一个函数，用来设置上报日志的 URL 地址
