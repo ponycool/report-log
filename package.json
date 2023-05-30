@@ -1,6 +1,6 @@
 {
   "name": "@pony-cool/report-log",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A TypeScript module for reporting log events.",
   "type": "module",
   "main": "index.js",

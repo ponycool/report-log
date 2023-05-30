@@ -1,29 +1,15 @@
 stages:
-  #  - build
   - publish
-
-#build:
-#  stage: publish
-#  image: node:latest
-#  before_script:
-#    - apt update
-#    - apt install make
-#  cache:
-#    paths:
-#      - node_modules/
-#  script:
-#    - npm install
-#    - npm install -g typescript
-#    - make
 
 publish:
   stage: publish
   image: node:latest
-  #  needs:
-  #    - build
   cache:
     paths:
       - node_modules/
+  before_script:
+    - npm install
+    - npm install -g typescript
   script:
     - |
       {
@@ -31,7 +17,6 @@ publish:
         echo "//${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}"
       } | tee -a .npmrc
     # 发布到GitLab仓库上
-    #    - npm publish --registry ${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
     - npm publish
     # 设置npm官方仓库地址和令牌
     - rm -rf .npmrc
@@ -39,5 +24,5 @@ publish:
     - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
     # 发布到npm官方仓库上
     - npm publish --access public
-  #  only:
-  #    - tags
+  only:
+    - tags
