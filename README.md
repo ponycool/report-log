@@ -5,18 +5,18 @@
 ## 安装
 
 ```shell
-npm i @pony-cool/report-log
+npm i @ponycool/report-log
 
 # OR
 
-yarn add @pony-cool/report-log
+yarn add @ponycool/report-log
 
 ```
 
 ## 使用
 
 ```js
-import {setReportLogUrl, reportLog} from 'report-log';
+import {setReportLogUrl, reportLog} from '@ponycool/report-log';
 
 setReportLogUrl('https://example.com/new-log');
 reportLog({event: 'click', params: {button: 'submit'}});
@@ -39,4 +39,4 @@ make
 
 ## 阿里云源同步
 
-通过 web 方式来同步: [/sync/@pony-cool/report-log](https://www.npmmirror.com/sync/@pony-cool/report-log)
+通过 web 方式来同步: [/sync/@ponycool/report-log](https://www.npmmirror.com/sync/@ponycool/report-log)
