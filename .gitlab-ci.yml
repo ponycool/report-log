@@ -1,5 +1,5 @@
 stages:
-#  - build
+  #  - build
   - publish
 
 #build:
@@ -19,8 +19,8 @@ stages:
 publish:
   stage: publish
   image: node:latest
-#  needs:
-#    - build
+  #  needs:
+  #    - build
   cache:
     paths:
       - node_modules/
@@ -34,10 +34,10 @@ publish:
     #    - npm publish --registry ${CI_SERVER_HOST}/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
     - npm publish
     # 设置npm官方仓库地址和令牌
-    #    - rm -rf .npmrc
-    #    - npm config set registry https://registry.npmjs.org/
-    #    - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+    - rm -rf .npmrc
+    - npm config set registry https://registry.npmjs.org/
+    - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
     # 发布到npm官方仓库上
-  #    - npm publish --access public
+    - npm publish --access public
   #  only:
   #    - tags
